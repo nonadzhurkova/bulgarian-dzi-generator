@@ -48,6 +48,9 @@ Thumbs.db
 chroma_db/
 *.db
 
+# Cache files (uncomment to ignore, but we want to commit them for Streamlit Cloud)
+# cache/
+
 # Logs
 *.log
 
