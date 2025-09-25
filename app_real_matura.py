@@ -3,6 +3,8 @@ Streamlit app for real DZI matura questions
 """
 import streamlit as st
 import random
+import json
+import os
 from src.real_matura_generator import RealMaturaGenerator, SubjectArea
 
 # Page config
@@ -52,6 +54,17 @@ st.markdown("""
     margin-bottom: 8px;
     font-weight: 500;
     border: none;
+}
+
+.ai-generated-tag {
+    background: linear-gradient(90deg, #FF6B6B, #4ECDC4);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 8px;
 }
 
 .context-text {
@@ -108,6 +121,18 @@ div[data-testid="stVerticalBlock"] {
 div[data-testid="stHorizontalBlock"] {
     border: none !important;
 }
+
+/* Full width for show all mode */
+.main .block-container {
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+/* Better spacing for show all questions */
+.stContainer {
+    width: 100% !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -121,34 +146,85 @@ def initialize_session_state():
         st.session_state.current_question_index = 0
     if 'show_all' not in st.session_state:
         st.session_state.show_all = False
+    if 'ai_questions' not in st.session_state:
+        st.session_state.ai_questions = []
+    if 'all_questions' not in st.session_state:
+        st.session_state.all_questions = []
+
+def load_ai_generated_questions():
+    """Load AI generated questions from export file"""
+    try:
+        if os.path.exists("generated_questions_export.json"):
+            with open("generated_questions_export.json", "r", encoding="utf-8") as f:
+                data = json.load(f)
+                return data.get("questions", [])
+    except Exception as e:
+        st.error(f"Error loading AI questions: {e}")
+    return []
+
+def merge_questions(real_questions, ai_questions):
+    """Merge real and AI generated questions"""
+    all_questions = []
+    
+    # Add real questions first (if available)
+    if real_questions:
+        for i, q in enumerate(real_questions):
+            q_copy = q.copy()
+            q_copy['id'] = f"real_{i}"
+            q_copy['source'] = 'real'
+            all_questions.append(q_copy)
+    
+    # Add AI generated questions (if available)
+    if ai_questions:
+        for i, q in enumerate(ai_questions):
+            q_copy = q.copy()
+            q_copy['id'] = f"ai_{i}"
+            q_copy['source'] = 'ai_generated'
+            all_questions.append(q_copy)
+    
+    return all_questions
 
 def display_question(question, show_answer=False, question_index=None):
     """Display question in beautiful format"""
-    # Real matura tag
-    st.markdown('<div class="real-matura-tag">📚 Базиран на реална матура</div>', unsafe_allow_html=True)
+    # Show appropriate tag based on source
+    if isinstance(question, dict) and question.get('source') == 'ai_generated':
+        st.markdown('<div class="ai-generated-tag">🤖 AI Генериран</div>', unsafe_allow_html=True)
+    else:
+        st.markdown('<div class="real-matura-tag">📚 Базиран на реална матура</div>', unsafe_allow_html=True)
+    
+    # Handle both dict and object formats
+    if isinstance(question, dict):
+        question_text = question.get('question', 'N/A')
+        options = question.get('options', [])
+        correct_answer = question.get('correct_answer', '')
+    else:
+        question_text = question.question_text
+        options = question.options
+        correct_answer = question.correct_answer
     
     st.markdown(f'''
     <div class="question-box">
-        {question.question_text}
+        {question_text}
     </div>
     ''', unsafe_allow_html=True)
     
-    # Display context texts if available
-    if question.context_texts:
+    # Display context texts if available (only for real questions)
+    if not isinstance(question, dict) and hasattr(question, 'context_texts') and question.context_texts:
         st.markdown("### 📄 Контекстни текстове")
         for text_key, text_content in question.context_texts.items():
             st.markdown(f'<div class="context-text"><strong>{text_key}:</strong><br>{text_content}</div>', unsafe_allow_html=True)
     
-    if question.options:
+    if options:
         st.markdown('<div class="options-box">', unsafe_allow_html=True)
         st.markdown("**Изберете отговор:**")
         
         # Create checkboxes for each option with unique keys
         selected_options = []
-        for i, option in enumerate(question.options):
+        for i, option in enumerate(options):
             # Use question_index for unique keys
             key_suffix = f"_{question_index}" if question_index is not None else ""
-            if st.checkbox(f"{option}", key=f"option_{question.id}_{i}{key_suffix}"):
+            question_id = question.get('id', f"q_{question_index}") if isinstance(question, dict) else question.id
+            if st.checkbox(f"{option}", key=f"option_{question_id}_{i}{key_suffix}"):
                 selected_options.append(option)
         
         st.markdown('</div>', unsafe_allow_html=True)
@@ -156,25 +232,34 @@ def display_question(question, show_answer=False, question_index=None):
         # Automatic answer checking when option is selected
         if selected_options:
             # Check if selected answer is correct
-            if question.correct_answer in selected_options:
+            if correct_answer in selected_options:
                 st.success("✅ Правилен отговор!")
             else:
                 st.error("❌ Грешен отговор!")
-                st.markdown(f"**Правилният отговор е:** {question.correct_answer}")
+                st.markdown(f"**Правилният отговор е:** {correct_answer}")
     
-    if show_answer and question.correct_answer:
+    if show_answer and correct_answer:
         st.markdown('<div class="answer-box">', unsafe_allow_html=True)
         st.markdown("**Правилен отговор:**")
-        st.markdown(question.correct_answer)
+        st.markdown(correct_answer)
         st.markdown('</div>', unsafe_allow_html=True)
     
-    if show_answer and question.explanation:
+    if show_answer and not isinstance(question, dict) and hasattr(question, 'explanation') and question.explanation:
         st.markdown("**Обяснение:**")
         st.markdown(question.explanation)
 
 def main():
     """Main app function"""
     initialize_session_state()
+    
+    # Load AI generated questions if available
+    if not st.session_state.ai_questions:
+        ai_questions = load_ai_generated_questions()
+        if ai_questions:
+            st.session_state.ai_questions = ai_questions
+            # Get real questions safely
+            real_questions = st.session_state.generator.load_real_questions()
+            st.session_state.all_questions = merge_questions(real_questions, ai_questions)
     
     st.title("📚 Реални ДЗИ Въпроси по БЕЛ")
     st.markdown("Въпроси от истински ДЗИ изпити")
@@ -192,6 +277,19 @@ def main():
         
         # Question count
         count = st.slider("Брой въпроси:", 1, 20, 5)
+        
+        # Import AI questions button
+        if st.button("🤖 Импортирай AI въпроси", key="import_ai"):
+            ai_questions = load_ai_generated_questions()
+            if ai_questions:
+                st.session_state.ai_questions = ai_questions
+                # Get real questions safely
+                real_questions = st.session_state.generator.load_real_questions()
+                st.session_state.all_questions = merge_questions(real_questions, ai_questions)
+                st.success(f"✅ Импортирани {len(ai_questions)} AI въпроса!")
+                st.rerun()
+            else:
+                st.warning("⚠️ Няма намерен файл с AI въпроси (generated_questions_export.json)")
         
         # Generate button
         if st.button("🎲 Генерирай въпроси", type="primary"):
@@ -229,81 +327,103 @@ def main():
             st.markdown(f"**Литература:** {literature_count}")
     
     # Main content
-    if not st.session_state.generated_questions:
-        st.info("👆 Изберете параметри и натиснете 'Генерирай въпроси' за да започнете")
+    if not st.session_state.generated_questions and not st.session_state.all_questions:
+        st.info("👆 Изберете параметри и натиснете 'Генерирай въпроси' или 'Импортирай AI въпроси' за да започнете")
         return
     
-    questions = st.session_state.generated_questions
+    # Use merged questions if available, otherwise use generated questions
+    if st.session_state.all_questions:
+        questions = st.session_state.all_questions
+    else:
+        questions = st.session_state.generated_questions
     
     # Show all questions mode
     if st.session_state.show_all:
-        st.markdown("### 📚 Всички въпроси")
-        
-        # Add back button
-        if st.button("🔙 Назад към единичен режим", key="back_to_single_all"):
-            st.session_state.show_all = False
-            st.rerun()
-        
-        st.markdown("---")
-        
-        # Display all questions with improved design
-        for i, question in enumerate(questions):
-            # Question header - clean version
-            st.markdown(f"**{i+1}.** **{question.question_text}**")
+        # Full width container for all questions
+        with st.container():
+            st.markdown("### 📚 Всички въпроси")
             
-            # Real matura tag
-            st.markdown('<div class="real-matura-tag">📚 Базиран на реална матура</div>', unsafe_allow_html=True)
-            
-            # Display options if available
-            if question.options:
-                st.markdown("**Изберете отговор:**")
-                
-                # Create checkboxes for each option
-                selected_options = []
-                for j, option in enumerate(question.options):
-                    if st.checkbox(f"{option}", key=f"option_all_{question.id}_{j}"):
-                        selected_options.append(option)
-                
-                # Automatic answer checking when option is selected
-                if selected_options:
-                    # Check if selected answer is correct
-                    if question.correct_answer in selected_options:
-                        st.success("✅ Правилен отговор!")
-                    else:
-                        st.error("❌ Грешен отговор!")
-                        st.markdown(f"**Правилният отговор е:** {question.correct_answer}")
+            # Add back button
+            if st.button("🔙 Назад към единичен режим", key="back_to_single_all"):
+                st.session_state.show_all = False
+                st.rerun()
             
             st.markdown("---")
+            
+            # Display all questions with improved design
+            for i, question in enumerate(questions):
+                # Question container with full width
+                with st.container():
+                    # Question header - clean version
+                    st.markdown(f"**{i+1}.** **{question.question_text}**")
+                    
+                    # Real matura tag
+                    st.markdown('<div class="real-matura-tag">📚 Базиран на реална матура</div>', unsafe_allow_html=True)
+                    
+                    # Display options if available
+                    if question.options:
+                        st.markdown("**Изберете отговор:**")
+                        
+                        # Create checkboxes for each option
+                        selected_options = []
+                        for j, option in enumerate(question.options):
+                            if st.checkbox(f"{option}", key=f"option_all_{question.id}_{j}"):
+                                selected_options.append(option)
+                        
+                        # Automatic answer checking when option is selected
+                        if selected_options:
+                            # Check if selected answer is correct
+                            if question.correct_answer in selected_options:
+                                st.success("✅ Правилен отговор!")
+                            else:
+                                st.error("❌ Грешен отговор!")
+                                st.markdown(f"**Правилният отговор е:** {question.correct_answer}")
+                    
+                    st.markdown("---")
         return
     
     # Single question mode
     current_index = st.session_state.current_question_index
     current_question = questions[current_index]
     
-    # Question display - clean version
-    st.markdown(f"**{current_index + 1}.** **{current_question.question_text}**")
+    # Handle both dict and object formats
+    if isinstance(current_question, dict):
+        question_text = current_question.get('question', 'N/A')
+        options = current_question.get('options', [])
+        correct_answer = current_question.get('correct_answer', '')
+    else:
+        question_text = current_question.question_text
+        options = current_question.options
+        correct_answer = current_question.correct_answer
     
-    # Real matura tag
-    st.markdown('<div class="real-matura-tag">📚 Базиран на реална матура</div>', unsafe_allow_html=True)
+    # Question display - clean version
+    st.markdown(f"**{current_index + 1}.** **{question_text}**")
+    
+    # Show appropriate tag based on source
+    if isinstance(current_question, dict) and current_question.get('source') == 'ai_generated':
+        st.markdown('<div class="ai-generated-tag">🤖 AI Генериран</div>', unsafe_allow_html=True)
+    else:
+        st.markdown('<div class="real-matura-tag">📚 Базиран на реална матура</div>', unsafe_allow_html=True)
     
     # Display options if available
-    if current_question.options:
+    if options:
         st.markdown("**Изберете отговор:**")
         
         # Create checkboxes for each option
         selected_options = []
-        for i, option in enumerate(current_question.options):
-            if st.checkbox(f"{option}", key=f"option_{current_question.id}_{i}"):
+        for i, option in enumerate(options):
+            question_id = current_question.get('id', f"q_{current_index}") if isinstance(current_question, dict) else current_question.id
+            if st.checkbox(f"{option}", key=f"option_{question_id}_{i}"):
                 selected_options.append(option)
         
         # Automatic answer checking when option is selected
         if selected_options:
             # Check if selected answer is correct
-            if current_question.correct_answer in selected_options:
+            if correct_answer in selected_options:
                 st.success("✅ Правилен отговор!")
             else:
                 st.error("❌ Грешен отговор!")
-                st.markdown(f"**Правилният отговор е:** {current_question.correct_answer}")
+                st.markdown(f"**Правилният отговор е:** {correct_answer}")
     
     # Navigation
     col1, col2, col3 = st.columns([1, 1, 1])

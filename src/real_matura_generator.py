@@ -56,10 +56,12 @@ class RealMaturaGenerator:
                 print(f"Loaded {len(questions2)} questions from matura_2025_avgust.json")
             
             print(f"Total loaded: {len(self.questions_data)} real matura questions")
+            return self.questions_data
             
         except Exception as e:
             print(f"Error loading real questions: {e}")
             self.questions_data = []
+            return []
     
     def convert_real_question(self, real_question: Dict[str, Any]) -> Question:
         """Convert real question data to Question object"""
