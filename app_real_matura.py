@@ -69,6 +69,17 @@ st.markdown("""
     margin-bottom: 8px;
 }
 
+.spelling-tag {
+    background: linear-gradient(90deg, #9C27B0, #E91E63);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
 .context-text {
     background-color: #fff3e0;
     padding: 12px;
@@ -167,6 +178,11 @@ div[data-testid="stHorizontalBlock"] > div {
 .compact-question.ai {
     border-left-color: #ff6b6b; /* Red for AI questions */
     background: linear-gradient(135deg, #f8f9fa 0%, #ffe8e8 100%);
+}
+
+.compact-question.spelling {
+    border-left-color: #9c27b0; /* Purple for spelling questions */
+    background: linear-gradient(135deg, #f8f9fa 0%, #f3e5f5 100%);
 }
 
 .compact-options {
@@ -316,7 +332,7 @@ def is_duplicate_question(question, existing_questions):
     return False
 
 def load_all_questions():
-    """Load all questions: real + AI from ai-data folder"""
+    """Load all questions: real + AI + spelling from ai-data folder"""
     all_questions = []
     duplicates_removed = 0
     
@@ -390,6 +406,43 @@ def load_all_questions():
         except Exception as e:
             st.error(f"Error loading {ai_file}: {e}")
     
+    # Load spelling questions from ai-data folder
+    spelling_files = list(set(glob.glob("ai-data/*spelling*questions*.json") + glob.glob("ai-data/comprehensive_spelling*questions*.json")))
+    print(f"Found spelling files: {spelling_files}")
+    for spelling_file in spelling_files:
+        try:
+            with open(spelling_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                spelling_questions = data.get('questions', [])
+                print(f"Loaded {len(spelling_questions)} questions from {spelling_file}")
+                
+                # Add spelling questions with metadata
+                for i, q in enumerate(spelling_questions):
+                    q_dict = {
+                        'id': f"spelling_{spelling_file}_{i}",
+                        'source': 'spelling',
+                        'question': q.get('question', 'N/A'),
+                        'options': q.get('options', []),
+                        'correct_answer': q.get('correct_answer', ''),
+                        'subject': 'Правопис',  # Set subject to "Правопис"
+                        'difficulty': q.get('difficulty', 'medium'),
+                        'points': q.get('points', 1),
+                        'category': q.get('category', 'правопис'),
+                        'question_type': q.get('question_type', ''),
+                        'common_error': q.get('common_error', ''),
+                        'correct_word': q.get('correct_word', ''),
+                        'wrong_word': q.get('wrong_word', '')
+                    }
+                    
+                    # Check for duplicates before adding
+                    if not is_duplicate_question(q_dict, all_questions):
+                        all_questions.append(q_dict)
+                    else:
+                        duplicates_removed += 1
+                    
+        except Exception as e:
+            st.error(f"Error loading {spelling_file}: {e}")
+    
     # Show duplicates removed info (hidden)
     # if duplicates_removed > 0:
     #     st.info(f"ℹ️ Премахнати {duplicates_removed} дублирани въпроси")
@@ -402,14 +455,23 @@ def display_question(question, show_answer=False, question_index=None, compact_m
     if not compact_mode:
         if question.get('source') == 'ai_generated':
             st.markdown('<div class="ai-generated-tag">🤖 AI Генериран</div>', unsafe_allow_html=True)
+        elif question.get('source') == 'spelling':
+            st.markdown('<div class="spelling-tag">✍️ Правопис</div>', unsafe_allow_html=True)
         else:
             st.markdown('<div class="real-matura-tag">📚 Базиран на реална матура</div>', unsafe_allow_html=True)
     
     # Question text - compact version for "show all" mode
     if compact_mode:
         # Add icon and color class based on source
-        icon = "📚" if question.get('source') == 'real' else "🤖"
-        color_class = "real" if question.get('source') == 'real' else "ai"
+        if question.get('source') == 'real':
+            icon = "📚"
+            color_class = "real"
+        elif question.get('source') == 'spelling':
+            icon = "✍️"
+            color_class = "spelling"
+        else:
+            icon = "🤖"
+            color_class = "ai"
         st.markdown(f'''
         <div class="compact-question {color_class}">
             <strong>{icon} {question_index + 1}.</strong> {question.get('question', 'N/A')}
@@ -456,6 +518,12 @@ def display_question(question, show_answer=False, question_index=None, compact_m
             else:
                 st.error("❌ Грешен отговор!")
                 st.markdown(f"**Правилният отговор е:** {correct_answer}")
+                
+                # Show correct spelling for spelling questions
+                if question.get('category') == 'правопис' and question.get('correct_word'):
+                    st.info(f"💡 **Правилно се пише:** {question.get('correct_word')}")
+                if question.get('category') == 'правопис' and question.get('wrong_word'):
+                    st.warning(f"⚠️ **Грешно се пише:** {question.get('wrong_word')}")
     
     # Show answer if requested
     if show_answer and question.get('correct_answer'):
@@ -493,9 +561,11 @@ def main():
         
         real_count = len([q for q in questions if q.get('source') == 'real'])
         ai_count = len([q for q in questions if q.get('source') == 'ai_generated'])
+        spelling_count = len([q for q in questions if q.get('source') == 'spelling'])
         
         st.markdown(f"**Реални въпроси:** {real_count}")
         st.markdown(f"**AI въпроси:** {ai_count}")
+        st.markdown(f"**Правописни въпроси:** {spelling_count}")
         
         # Subject filter
         subjects = list(set([q.get('subject', 'Unknown') for q in questions]))
@@ -561,6 +631,8 @@ def main():
         # Show appropriate tag
         if current_question.get('source') == 'ai_generated':
             st.markdown('<div class="ai-generated-tag">🤖 AI Генериран</div>', unsafe_allow_html=True)
+        elif current_question.get('source') == 'spelling':
+            st.markdown('<div class="spelling-tag">✍️ Правопис</div>', unsafe_allow_html=True)
         else:
             st.markdown('<div class="real-matura-tag">📚 Базиран на реална матура</div>', unsafe_allow_html=True)
         

@@ -1,0 +1,1141 @@
+{
+  "metadata": {
+    "total_questions": 60,
+    "regular_questions": 50,
+    "specialized_questions": 10,
+    "timestamp": "2025-09-25T19:15:48.331700",
+    "source": "Comprehensive Spelling Generator"
+  },
+  "questions": [
+    {
+      "question": "Коя е грешно написаната дума?",
+      "options": [
+        "продължава",
+        "кумир",
+        "сюжет",
+        "хотдок"
+      ],
+      "correct_answer": "хотдок",
+      "subject": "Български език и литература",
+      "difficulty": "hard",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "хотдок",
+      "correct_word": "хотдог",
+      "question_id": "spelling_1"
+    },
+    {
+      "question": "Изберете правилно написаната дума:",
+      "options": [
+        "пребирам се",
+        "уписвам",
+        "скилидка",
+        "ядеме"
+      ],
+      "correct_answer": "скилидка",
+      "subject": "Български език и литература",
+      "difficulty": "hard",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "скилитка",
+      "correct_word": "скилидка",
+      "question_id": "spelling_2"
+    },
+    {
+      "question": "Изберете грешно написаната дума:",
+      "options": [
+        "гинекологичен",
+        "символ",
+        "съндък",
+        "безкраен"
+      ],
+      "correct_answer": "съндък",
+      "subject": "Български език и литература",
+      "difficulty": "hard",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "съндък",
+      "correct_word": "сандък",
+      "question_id": "spelling_3"
+    },
+    {
+      "question": "Кой от следните варианти е грешно изписан?",
+      "options": [
+        "овеличавам",
+        "върви",
+        "опържа",
+        "ед.ч критерий"
+      ],
+      "correct_answer": "овеличавам",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "овеличавам",
+      "correct_word": "увеличавам",
+      "question_id": "spelling_4"
+    },
+    {
+      "question": "Изберете грешно написаната дума:",
+      "options": [
+        "завреш",
+        "площта",
+        "оттук",
+        "съдист"
+      ],
+      "correct_answer": "съдист",
+      "subject": "Български език и литература",
+      "difficulty": "easy",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "съдист",
+      "correct_word": "садист",
+      "question_id": "spelling_5"
+    },
+    {
+      "question": "Кой от следните варианти е правилно изписан?",
+      "options": [
+        "обективна",
+        "еродиран",
+        "лотус",
+        "купили"
+      ],
+      "correct_answer": "обективна",
+      "subject": "Български език и литература",
+      "difficulty": "hard",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "убективна",
+      "correct_word": "обективна",
+      "question_id": "spelling_6"
+    },
+    {
+      "question": "Коя дума е написана правилно?",
+      "options": [
+        "тичаики",
+        "рожденник",
+        "информация",
+        "разтекал"
+      ],
+      "correct_answer": "информация",
+      "subject": "Български език и литература",
+      "difficulty": "hard",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "имформация",
+      "correct_word": "информация",
+      "question_id": "spelling_7"
+    },
+    {
+      "question": "Кой е правилният правопис?",
+      "options": [
+        "лимузина",
+        "изтукан",
+        "вирустна",
+        "Беларуст"
+      ],
+      "correct_answer": "лимузина",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "лимозина",
+      "correct_word": "лимузина",
+      "question_id": "spelling_8"
+    },
+    {
+      "question": "Изберете грешно написаната дума:",
+      "options": [
+        "конфигурация",
+        "помияр",
+        "разтекъл",
+        "бръмбър"
+      ],
+      "correct_answer": "бръмбър",
+      "subject": "Български език и литература",
+      "difficulty": "hard",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "бръмбър",
+      "correct_word": "бръмбар",
+      "question_id": "spelling_9"
+    },
+    {
+      "question": "Изберете грешно написаната дума:",
+      "options": [
+        "заек",
+        "върви",
+        "половин",
+        "четах"
+      ],
+      "correct_answer": "четах",
+      "subject": "Български език и литература",
+      "difficulty": "easy",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "четах",
+      "correct_word": "четох",
+      "question_id": "spelling_10"
+    },
+    {
+      "question": "Коя дума е написана неправилно?",
+      "options": [
+        "облегчен",
+        "друид",
+        "мъкар",
+        "приятел"
+      ],
+      "correct_answer": "приятел",
+      "subject": "Български език и литература",
+      "difficulty": "hard",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "приател",
+      "correct_word": "приятел",
+      "question_id": "spelling_11"
+    },
+    {
+      "question": "Кой от следните варианти е грешно изписан?",
+      "options": [
+        "постарому",
+        "изстрел",
+        "абсолютен",
+        "клавятура"
+      ],
+      "correct_answer": "клавятура",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "клавятура",
+      "correct_word": "клавиатура",
+      "question_id": "spelling_12"
+    },
+    {
+      "question": "Изберете правилно написаната дума:",
+      "options": [
+        "а ми",
+        "егоист",
+        "колинар",
+        "ас"
+      ],
+      "correct_answer": "егоист",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "игоист",
+      "correct_word": "егоист",
+      "question_id": "spelling_13"
+    },
+    {
+      "question": "Изберете грешно написаната дума:",
+      "options": [
+        "обичта",
+        "вижте",
+        "разделно: из ведро",
+        "по старо му"
+      ],
+      "correct_answer": "по старо му",
+      "subject": "Български език и литература",
+      "difficulty": "hard",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "по старо му",
+      "correct_word": "постарому",
+      "question_id": "spelling_14"
+    },
+    {
+      "question": "Изберете правилно написаната дума:",
+      "options": [
+        "повиност",
+        "убожавам",
+        "милиярд",
+        "мотика"
+      ],
+      "correct_answer": "мотика",
+      "subject": "Български език и литература",
+      "difficulty": "easy",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "мутика",
+      "correct_word": "мотика",
+      "question_id": "spelling_15"
+    },
+    {
+      "question": "Кой от следните варианти е правилно изписан?",
+      "options": [
+        "въстание",
+        "търалеж",
+        "тенеска",
+        "калчища"
+      ],
+      "correct_answer": "въстание",
+      "subject": "Български език и литература",
+      "difficulty": "easy",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "възтание",
+      "correct_word": "въстание",
+      "question_id": "spelling_16"
+    },
+    {
+      "question": "Кой е неправилният правопис?",
+      "options": [
+        "усигорявам",
+        "аерогара",
+        "сащия",
+        "плеоцен"
+      ],
+      "correct_answer": "аерогара",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "айрогара",
+      "correct_word": "аерогара",
+      "question_id": "spelling_17"
+    },
+    {
+      "question": "Коя дума е написана неправилно?",
+      "options": [
+        "тарся",
+        "безпорно",
+        "муцуна",
+        "голями"
+      ],
+      "correct_answer": "муцуна",
+      "subject": "Български език и литература",
+      "difficulty": "easy",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "моцуна",
+      "correct_word": "муцуна",
+      "question_id": "spelling_18"
+    },
+    {
+      "question": "Коя е грешно написаната дума?",
+      "options": [
+        "колибка",
+        "данеби",
+        "за кафето еспресо",
+        "лекция"
+      ],
+      "correct_answer": "данеби",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "данеби",
+      "correct_word": "да не би",
+      "question_id": "spelling_19"
+    },
+    {
+      "question": "Кой от следните варианти е грешно изписан?",
+      "options": [
+        "продължава",
+        "фармацефт",
+        "астигматизъм",
+        "регистрирам"
+      ],
+      "correct_answer": "фармацефт",
+      "subject": "Български език и литература",
+      "difficulty": "hard",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "фармацефт",
+      "correct_word": "фармацевт",
+      "question_id": "spelling_20"
+    },
+    {
+      "question": "Изберете грешно написаната дума:",
+      "options": [
+        "осемнайсет",
+        "бедствие",
+        "ковчег",
+        "дизертирам"
+      ],
+      "correct_answer": "дизертирам",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "дизертирам",
+      "correct_word": "дезертирам",
+      "question_id": "spelling_21"
+    },
+    {
+      "question": "Кой е правилният правопис?",
+      "options": [
+        "пръставлява",
+        "Петьо",
+        "корегирам",
+        "взаимствам"
+      ],
+      "correct_answer": "Петьо",
+      "subject": "Български език и литература",
+      "difficulty": "easy",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "Петйо",
+      "correct_word": "Петьо",
+      "question_id": "spelling_22"
+    },
+    {
+      "question": "Коя дума е написана неправилно?",
+      "options": [
+        "купувам",
+        "охажвам",
+        "лакирвам",
+        "не знаен"
+      ],
+      "correct_answer": "купувам",
+      "subject": "Български език и литература",
+      "difficulty": "easy",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "копувам",
+      "correct_word": "купувам",
+      "question_id": "spelling_23"
+    },
+    {
+      "question": "Коя дума е написана неправилно?",
+      "options": [
+        "лазарен",
+        "глутеус",
+        "първеню",
+        "овеличавам"
+      ],
+      "correct_answer": "глутеус",
+      "subject": "Български език и литература",
+      "difficulty": "easy",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "глотеос",
+      "correct_word": "глутеус",
+      "question_id": "spelling_24"
+    },
+    {
+      "question": "Изберете грешно написаната дума:",
+      "options": [
+        "имено",
+        "уплашвам",
+        "гладка",
+        "ръка"
+      ],
+      "correct_answer": "имено",
+      "subject": "Български език и литература",
+      "difficulty": "easy",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "имено",
+      "correct_word": "именно тук не може да се приложи правилото за „нен“",
+      "question_id": "spelling_25"
+    },
+    {
+      "question": "Кой от следните варианти е грешно изписан?",
+      "options": [
+        "трансцедентен",
+        "купувач",
+        "мисъл",
+        "дотук"
+      ],
+      "correct_answer": "трансцедентен",
+      "subject": "Български език и литература",
+      "difficulty": "hard",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "трансцедентен",
+      "correct_word": "трансцендентен",
+      "question_id": "spelling_26"
+    },
+    {
+      "question": "Кой е правилният правопис?",
+      "options": [
+        "онаследявам",
+        "дъвчим",
+        "колибка",
+        "немърлив"
+      ],
+      "correct_answer": "колибка",
+      "subject": "Български език и литература",
+      "difficulty": "easy",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "колипка",
+      "correct_word": "колибка",
+      "question_id": "spelling_27"
+    },
+    {
+      "question": "Коя дума е написана неправилно?",
+      "options": [
+        "стълпкновение",
+        "уливам",
+        "'успявам",
+        "Хирушима"
+      ],
+      "correct_answer": "'успявам",
+      "subject": "Български език и литература",
+      "difficulty": "easy",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "оспявам",
+      "correct_word": "'успявам",
+      "question_id": "spelling_28"
+    },
+    {
+      "question": "Коя дума е написана правилно?",
+      "options": [
+        "прадка",
+        "ядох",
+        "лотус",
+        "убожавам"
+      ],
+      "correct_answer": "ядох",
+      "subject": "Български език и литература",
+      "difficulty": "hard",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "ядах",
+      "correct_word": "ядох",
+      "question_id": "spelling_29"
+    },
+    {
+      "question": "Кой е правилният правопис?",
+      "options": [
+        "колинар",
+        "женитба",
+        "по-принцип",
+        "транвай"
+      ],
+      "correct_answer": "женитба",
+      "subject": "Български език и литература",
+      "difficulty": "hard",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "женидба",
+      "correct_word": "женитба",
+      "question_id": "spelling_30"
+    },
+    {
+      "question": "Кой е неправилният правопис?",
+      "options": [
+        "когато се употребява вместо измервам",
+        "сдание",
+        "придоставя",
+        "упържа"
+      ],
+      "correct_answer": "когато се употребява вместо измервам",
+      "subject": "Български език и литература",
+      "difficulty": "easy",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "замервам",
+      "correct_word": "когато се употребява вместо измервам",
+      "question_id": "spelling_31"
+    },
+    {
+      "question": "Кой е правилният правопис?",
+      "options": [
+        "сретство",
+        "прещипан",
+        "лимонтозу",
+        "косвено"
+      ],
+      "correct_answer": "косвено",
+      "subject": "Български език и литература",
+      "difficulty": "easy",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "косвенно",
+      "correct_word": "косвено",
+      "question_id": "spelling_32"
+    },
+    {
+      "question": "Кой е неправилният правопис?",
+      "options": [
+        "кебабче",
+        "глаголи",
+        "туку-така",
+        "вашата"
+      ],
+      "correct_answer": "вашата",
+      "subject": "Български език и литература",
+      "difficulty": "easy",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "ваща",
+      "correct_word": "вашата",
+      "question_id": "spelling_33"
+    },
+    {
+      "question": "Изберете грешно написаната дума:",
+      "options": [
+        "приятно",
+        "взаимствам",
+        "енергийна",
+        "заместник"
+      ],
+      "correct_answer": "взаимствам",
+      "subject": "Български език и литература",
+      "difficulty": "easy",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "взаимствам",
+      "correct_word": "заимствам",
+      "question_id": "spelling_34"
+    },
+    {
+      "question": "Кой от следните варианти е грешно изписан?",
+      "options": [
+        "усмихвам",
+        "лъжа",
+        "мармот",
+        "осъвършенствам"
+      ],
+      "correct_answer": "осъвършенствам",
+      "subject": "Български език и литература",
+      "difficulty": "easy",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "осъвършенствам",
+      "correct_word": "усъвършенствам",
+      "question_id": "spelling_35"
+    },
+    {
+      "question": "Коя е грешно написаната дума?",
+      "options": [
+        "петнайсет",
+        "прищипан в смисъл на притиснат",
+        "жирав",
+        "лавина"
+      ],
+      "correct_answer": "жирав",
+      "subject": "Български език и литература",
+      "difficulty": "easy",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "жирав",
+      "correct_word": "жираф",
+      "question_id": "spelling_36"
+    },
+    {
+      "question": "Коя е правилно написаната дума?",
+      "options": [
+        "изкочи",
+        "успех",
+        "цено",
+        "апък"
+      ],
+      "correct_answer": "успех",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "оспех",
+      "correct_word": "успех",
+      "question_id": "spelling_37"
+    },
+    {
+      "question": "Кой от следните варианти е правилно изписан?",
+      "options": [
+        "атски",
+        "някаде",
+        "продалжава",
+        "абсолютен"
+      ],
+      "correct_answer": "абсолютен",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "абсолутен",
+      "correct_word": "абсолютен",
+      "question_id": "spelling_38"
+    },
+    {
+      "question": "Кой е правилният правопис?",
+      "options": [
+        "сфръхзвуков",
+        "фасунка",
+        "скучновато",
+        "протоберанс"
+      ],
+      "correct_answer": "скучновато",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "скучнувато",
+      "correct_word": "скучновато",
+      "question_id": "spelling_39"
+    },
+    {
+      "question": "Коя е грешно написаната дума?",
+      "options": [
+        "голями",
+        "сборник",
+        "тръстика",
+        "завреш"
+      ],
+      "correct_answer": "голями",
+      "subject": "Български език и литература",
+      "difficulty": "hard",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "голями",
+      "correct_word": "големи",
+      "question_id": "spelling_40"
+    },
+    {
+      "question": "Кой е правилният правопис?",
+      "options": [
+        "куфър",
+        "прецедател",
+        "протеин",
+        "от тук"
+      ],
+      "correct_answer": "протеин",
+      "subject": "Български език и литература",
+      "difficulty": "easy",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "протейн",
+      "correct_word": "протеин",
+      "question_id": "spelling_41"
+    },
+    {
+      "question": "Коя е грешно написаната дума?",
+      "options": [
+        "управлявам",
+        "Тамбукту",
+        "випускник",
+        "озова"
+      ],
+      "correct_answer": "Тамбукту",
+      "subject": "Български език и литература",
+      "difficulty": "hard",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "Тамбукту",
+      "correct_word": "Тимбукту",
+      "question_id": "spelling_42"
+    },
+    {
+      "question": "Коя дума е написана правилно?",
+      "options": [
+        "ъпсурт",
+        "дволичник",
+        "дванайсе",
+        "нужна"
+      ],
+      "correct_answer": "нужна",
+      "subject": "Български език и литература",
+      "difficulty": "hard",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "нуждна",
+      "correct_word": "нужна",
+      "question_id": "spelling_43"
+    },
+    {
+      "question": "Кой от следните варианти е правилно изписан?",
+      "options": [
+        "промоция",
+        "ужастно",
+        "мириз",
+        "изтина"
+      ],
+      "correct_answer": "промоция",
+      "subject": "Български език и литература",
+      "difficulty": "easy",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "премоция",
+      "correct_word": "промоция",
+      "question_id": "spelling_44"
+    },
+    {
+      "question": "Изберете правилно написаната дума:",
+      "options": [
+        "юнуша",
+        "тънак",
+        "лисче",
+        "прищипвам"
+      ],
+      "correct_answer": "прищипвам",
+      "subject": "Български език и литература",
+      "difficulty": "hard",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "прещипвам",
+      "correct_word": "прищипвам",
+      "question_id": "spelling_45"
+    },
+    {
+      "question": "Коя е грешно написаната дума?",
+      "options": [
+        "увековечавам",
+        "силоз",
+        "пробва ли",
+        "улекна"
+      ],
+      "correct_answer": "улекна",
+      "subject": "Български език и литература",
+      "difficulty": "hard",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "улекна",
+      "correct_word": "олекна",
+      "question_id": "spelling_46"
+    },
+    {
+      "question": "Коя дума е написана правилно?",
+      "options": [
+        "върви ми",
+        "бес",
+        "савет",
+        "кумин"
+      ],
+      "correct_answer": "върви ми",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "„удава“",
+      "correct_word": "върви ми",
+      "question_id": "spelling_47"
+    },
+    {
+      "question": "Кой от следните варианти е грешно изписан?",
+      "options": [
+        "пробва ли",
+        "изключение",
+        "превъплащение",
+        "лавка"
+      ],
+      "correct_answer": "превъплащение",
+      "subject": "Български език и литература",
+      "difficulty": "hard",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "превъплащение",
+      "correct_word": "превъплъщение",
+      "question_id": "spelling_48"
+    },
+    {
+      "question": "Коя е грешно написаната дума?",
+      "options": [
+        "мошеник",
+        "светофар",
+        "и диал. немой",
+        "чесно"
+      ],
+      "correct_answer": "чесно",
+      "subject": "Български език и литература",
+      "difficulty": "hard",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_грешката",
+      "wrong_word": "чесно",
+      "correct_word": "честно",
+      "question_id": "spelling_49"
+    },
+    {
+      "question": "Кой е неправилният правопис?",
+      "options": [
+        "убективна",
+        "ерудиран",
+        "предстой",
+        "котия"
+      ],
+      "correct_answer": "ерудиран",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Comprehensive Spelling Generator",
+      "category": "правопис",
+      "question_type": "намери_правилната",
+      "wrong_word": "еродиран",
+      "correct_word": "ерудиран",
+      "question_id": "spelling_50"
+    },
+    {
+      "question": "Коя дума е написана с грешка 'о' вместо 'у'?",
+      "options": [
+        "омилостивявам",
+        "умилостивявам",
+        "успех",
+        "управление"
+      ],
+      "correct_answer": "омилостивявам",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Specialized Spelling Generator",
+      "category": "правопис_о_у",
+      "question_type": "специализиран",
+      "wrong_word": "омилостивявам",
+      "correct_word": "умилостивявам"
+    },
+    {
+      "question": "Коя дума е написана с грешка 'о' вместо 'у'?",
+      "options": [
+        "остройство",
+        "устройство",
+        "успех",
+        "управление"
+      ],
+      "correct_answer": "остройство",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Specialized Spelling Generator",
+      "category": "правопис_о_у",
+      "question_type": "специализиран",
+      "wrong_word": "остройство",
+      "correct_word": "устройство"
+    },
+    {
+      "question": "Коя дума е написана с грешка 'о' вместо 'у'?",
+      "options": [
+        "оникален",
+        "уникален",
+        "успех",
+        "управление"
+      ],
+      "correct_answer": "оникален",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Specialized Spelling Generator",
+      "category": "правопис_о_у",
+      "question_type": "специализиран",
+      "wrong_word": "оникален",
+      "correct_word": "уникален"
+    },
+    {
+      "question": "Коя дума е написана с грешка 'о' вместо 'у'?",
+      "options": [
+        "отъпкан",
+        "утъпкан",
+        "успех",
+        "управление"
+      ],
+      "correct_answer": "отъпкан",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Specialized Spelling Generator",
+      "category": "правопис_о_у",
+      "question_type": "специализиран",
+      "wrong_word": "отъпкан",
+      "correct_word": "утъпкан"
+    },
+    {
+      "question": "Коя дума е написана с грешка 'о' вместо 'у'?",
+      "options": [
+        "отайка",
+        "утайка",
+        "успех",
+        "управление"
+      ],
+      "correct_answer": "отайка",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Specialized Spelling Generator",
+      "category": "правопис_о_у",
+      "question_type": "специализиран",
+      "wrong_word": "отайка",
+      "correct_word": "утайка"
+    },
+    {
+      "question": "Коя дума е написана с грешка 'са' вместо 'съ'?",
+      "options": [
+        "садба",
+        "съдба",
+        "събирам",
+        "създавам"
+      ],
+      "correct_answer": "садба",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Specialized Spelling Generator",
+      "category": "правопис_са_съ",
+      "question_type": "специализиран",
+      "wrong_word": "садба",
+      "correct_word": "съдба"
+    },
+    {
+      "question": "Коя дума е написана с грешка 'са' вместо 'съ'?",
+      "options": [
+        "сащество",
+        "същество",
+        "събирам",
+        "създавам"
+      ],
+      "correct_answer": "сащество",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Specialized Spelling Generator",
+      "category": "правопис_са_съ",
+      "question_type": "специализиран",
+      "wrong_word": "сащество",
+      "correct_word": "същество"
+    },
+    {
+      "question": "Коя дума е написана с грешка 'са' вместо 'съ'?",
+      "options": [
+        "пясак",
+        "пясък",
+        "събирам",
+        "създавам"
+      ],
+      "correct_answer": "пясак",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Specialized Spelling Generator",
+      "category": "правопис_са_съ",
+      "question_type": "специализиран",
+      "wrong_word": "пясак",
+      "correct_word": "пясък"
+    },
+    {
+      "question": "Коя дума е написана с грешка 'са' вместо 'съ'?",
+      "options": [
+        "мисал",
+        "мисъл",
+        "събирам",
+        "създавам"
+      ],
+      "correct_answer": "мисал",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Specialized Spelling Generator",
+      "category": "правопис_са_съ",
+      "question_type": "специализиран",
+      "wrong_word": "мисал",
+      "correct_word": "мисъл"
+    },
+    {
+      "question": "Коя дума е написана с грешка 'са' вместо 'съ'?",
+      "options": [
+        "сарце",
+        "сърце",
+        "събирам",
+        "създавам"
+      ],
+      "correct_answer": "сарце",
+      "subject": "Български език и литература",
+      "difficulty": "medium",
+      "points": 1,
+      "source": "Specialized Spelling Generator",
+      "category": "правопис_са_съ",
+      "question_type": "специализиран",
+      "wrong_word": "сарце",
+      "correct_word": "сърце"
+    }
+  ]
+}
